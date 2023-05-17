@@ -144,7 +144,7 @@ async def _og_meta_from_url(url: str) -> OpenGraphMeta | None:
         return None
 
     try:
-        return scrap_og_meta(url, resp.text)
+        return scrap_og_meta(url, resp.content)
     except TimeoutError:
         logger.info(f"Timed out when scraping OG meta for {url}")
         return None
