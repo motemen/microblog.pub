@@ -37,7 +37,7 @@ def _scrap_og_meta(url: str, html: str) -> OpenGraphMeta | None:
     # Prevent SIGTERM to bubble up to the worker
     signal.signal(signal.SIGTERM, signal.SIG_IGN)
 
-    soup = BeautifulSoup(html, "html5lib")
+    soup = BeautifulSoup(html, "lxml")
     ogs = {
         og.attrs["property"]: og.attrs.get("content")
         for og in soup.html.head.findAll(property=re.compile(r"^og"))
