@@ -7,3 +7,12 @@ $form-background-color: #f5f5f5;
 .e-content a span, .activity-og-meta a {
     word-break: break-all;
 }
+
+.form input[type="submit"]:focus {
+  outline: 3px solid highlight;
+}
+
+.actor-box {
+  display: none;
+}
+
